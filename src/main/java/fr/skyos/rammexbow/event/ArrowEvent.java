@@ -10,12 +10,15 @@ public class ArrowEvent implements Listener {
 
     @EventHandler
     public void onProjectileLaunch(ProjectileLaunchEvent event){
+
         if(event.getEntity() instanceof Arrow) {
             Arrow arrow = (Arrow) event.getEntity();
+
             if(arrow.getShooter() instanceof Player) {
                 Vector velocity = arrow.getVelocity();
                 velocity.setY(velocity.getY() + 5);
                 arrow.setVelocity(velocity);
+
             }
         }
     }
